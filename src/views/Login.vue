@@ -3,7 +3,7 @@
     <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
     <section>
       <div class="col1">
-        <h1>Vuegram</h1>
+        <h1>Appex recruitment</h1>
         <p>Welcome to the <a href="localhost:8080/" target="_blank">Appex Recruitment</a> web app powered by Vue.js and Firebase.
           Developed by Martin Wangen as a skilltest for Appex AS</p>
       </div>
