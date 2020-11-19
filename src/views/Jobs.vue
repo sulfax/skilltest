@@ -25,6 +25,23 @@
 
 <script>
 export default {
-  name: "Jobs"
+  name: "Jobs",
+  data(){
+    return{
+      navURI: "https://arbeidsplassen.nav.no/public-feed/api/v1/ads?orgnr=",
+      publicToken:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWJsaWMudG9rZW4udjFAbmF2Lm5vIiwiYXVkIjoiZmVlZC1hcGktdjEiLCJpc3MiOiJuYXYubm8iLCJpYXQiOjE1NTc0NzM0MjJ9.jNGlLUF9HxoHo5JrQNMkweLj_91bgk97ZebLdfx3_UQ"
+
+    }
+  },
+  methods:{
+    async getJobs(orgnr){
+      return await fetch(this.navURI+orgnr,{
+        method:'GET',
+        headers:{
+          'Authorization': 'Bearer '+this.publicToken
+        }
+      })
+    }
+  }
 }
 </script>
