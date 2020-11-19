@@ -36,7 +36,7 @@
       <label style="" id="formatted_adress">
         {{ this.company.formatted_adress }}
         </label>
-      <button >Add Company</button>
+      <button >Save</button>
     </form>
   </div>
 </template>
@@ -58,6 +58,7 @@ export default {
     ...mapState(['companies'])
   },
   created() {
+    console.log(this.opened_company)
     if(this.opened_company.orgnr===0){
       this.company.orgnr=""
       this.company.name=""
@@ -67,7 +68,6 @@ export default {
 
   methods: {
     handleSubmit() {
-      console.log(this.company)
       this.$store.dispatch('createCompany', this.company)
     },
     async getCompany() {

@@ -42,10 +42,10 @@ export default {
     }
   },
   methods: {
-    editEmployee(company) {
+    editCompany(company) {
       this.$emit('edit:company', company.id, company)
     },
-    deleteEmployee(company) {
+    deleteCompany(company) {
       this.$emit('delete:company', company.id, company)
     }
   }

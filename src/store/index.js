@@ -79,8 +79,7 @@ const store = new Vuex.Store({
     },
     async createCompany({commit }, company) {
       // create company in firebase
-      console.log(company)
-      await fb.companiesCollection.add({
+      await fb.companiesCollection.doc(company.orgnr).set({
         orgnr: company.orgnr,
         name: company.name,
         note: company.note

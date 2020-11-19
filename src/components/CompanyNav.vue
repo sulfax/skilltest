@@ -49,8 +49,10 @@ export default {
       for (let i = 0; i < this.tabs.length; i++) {
         if (this.tabs[i] === x) {
           this.tabs.splice(i, 1)
+          this.$emit("close:tab",x)
         }
       }
+
     },
     newTab(x) {
       this.tabs.push(x)
